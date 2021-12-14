@@ -16,7 +16,7 @@ export const ProfileFunc = ({ name, registredAt }) => {
       }}
     >
       <p>
-        Привет, <b>{name}</b>
+        Привет, <b>{name.split(" ")[0]}!</b>
       </p>
       <p>Дата регистрации: {registredAt}</p>
     </div>

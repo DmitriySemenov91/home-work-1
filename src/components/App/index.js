@@ -2,16 +2,16 @@ import { Profile } from "../tutorial-9/profileClassComponent";
 import { ProfileFunc } from "../tutorial-9/profileFuncComponent";
 
 function App() {
-  const today = new Date().toLocaleDateString("en-GB", {
+  const today = new Date().toLocaleDateString("ru", {
     day: "numeric",
     month: "long",
     year: "numeric",
   });
   return (
     <div>
-      <Profile name="Дима" registredAt={today} />
+      <Profile name="Дима Семенов" registredAt={today} />
       <br />
-      <ProfileFunc name="Дима" registredAt={today} />
+      <ProfileFunc name="Дима Семенов" registredAt={today} />
     </div>
   );
 }

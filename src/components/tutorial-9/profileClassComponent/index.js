@@ -18,7 +18,7 @@ export class Profile extends React.Component {
         }}
       >
         <p>
-          Привет, <b>{name}</b>
+          Привет, <b>{name.split(" ")[0]}!</b>
         </p>
         <p>Дата регистрации: {registredAt}</p>
       </div>
