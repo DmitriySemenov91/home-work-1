@@ -3,9 +3,14 @@
 // import { ProfileFunc } from "../tutorial-9/profileFuncComponent";
 
 //task 1/11
+import { Form } from "../tutorial-2";
 
 function App() {
-  return <div>test</div>;
+  return (
+    <div>
+      <Form />
+    </div>
+  );
 }
 
 export default App;
