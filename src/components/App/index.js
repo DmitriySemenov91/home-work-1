@@ -1,19 +1,11 @@
-import { Profile } from "../tutorial-9/profileClassComponent";
-import { ProfileFunc } from "../tutorial-9/profileFuncComponent";
+// task 1/9
+// import { Profile } from "../tutorial-9/profileClassComponent";
+// import { ProfileFunc } from "../tutorial-9/profileFuncComponent";
+
+//task 1/11
 
 function App() {
-  const today = new Date().toLocaleDateString("ru", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-  return (
-    <div>
-      <Profile name="Дима Семенов" registredAt={today} />
-      <br />
-      <ProfileFunc name="Дима Семенов" registredAt={today} />
-    </div>
-  );
+  return <div>test</div>;
 }
 
 export default App;
