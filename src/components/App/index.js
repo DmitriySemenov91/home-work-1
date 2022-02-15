@@ -6,12 +6,14 @@
 // import { Form } from "../tutorial-2";
 
 //task 2/2
-import Faq from "../tutorial-2-2";
+//import Faq from "../tutorial-2-2";
 
+//task 2/8
+import AppPhrases from "../tutorial-4/App";
 function App() {
   return (
     <div>
-      <Faq />
+      <AppPhrases />
     </div>
   );
 }
