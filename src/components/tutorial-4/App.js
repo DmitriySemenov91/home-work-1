@@ -7,21 +7,13 @@ const App = () => {
   const [showPhrases, setShowPhrases] = useState([]);
 
   const addRandomPhrase = () => {
-    for (let i = 0; i < 1; i++) {
-      let adjectiveFirst = adjectivesArr.reduce((_, _c, _i, arr) => {
-        return arr[Math.floor(Math.random() * Math.floor(arr.length))];
-      });
-      let adjectiveSecond = adjectivesArr.reduce((_, _c, _i, arr) => {
-        return arr[Math.floor(Math.random() * Math.floor(arr.length))];
-      });
-      const noun = nounsArr.reduce((_, _c, _i, arr) => {
-        return arr[Math.floor(Math.random() * Math.floor(arr.length))];
-      });
-      setShowPhrases((prev) => [
-        ...prev,
-        `${adjectiveFirst} ${adjectiveSecond} ${noun}`,
-      ]);
-    }
+    const adjectiveFirst = Math.floor(Math.random() * adjectivesArr.length);
+    const adjectiveSecond = Math.floor(Math.random() * adjectivesArr.length);
+    const noun = Math.floor(Math.random() * nounsArr.length);
+    setShowPhrases((prev) => [
+      `${adjectivesArr[adjectiveFirst]} ${adjectivesArr[adjectiveSecond]} ${nounsArr[noun]}`,
+      ...prev,
+    ]);
   };
 
   const resetClickPhrases = () => {
@@ -51,7 +43,7 @@ const App = () => {
 
 export default App;
 
-export const adjectivesArr = [
+const adjectivesArr = [
   "абсолютный",
   "адский",
   "азартный",
@@ -82,8 +74,7 @@ export const adjectivesArr = [
   "неоценимый",
   "непередаваемый",
 ];
-
-export const nounsArr = [
+const nounsArr = [
   "лгун",
   "день",
   "конь",
