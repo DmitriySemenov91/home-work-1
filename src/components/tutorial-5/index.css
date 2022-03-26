@@ -1,0 +1,11 @@
+.wrapper-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-part{
+    display: flex;
+    flex-direction: column;
+}
