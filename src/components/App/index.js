@@ -9,11 +9,14 @@
 //import Faq from "../tutorial-2-2";
 
 //task 2/8
-import AppPhrases from "../tutorial-4/App";
+// import AppPhrases from "../tutorial-4/App";
+
+import ContactForm from "../tutorial-5";
+
 function App() {
   return (
     <div>
-      <AppPhrases />
+      <ContactForm />
     </div>
   );
 }
