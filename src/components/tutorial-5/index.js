@@ -20,18 +20,21 @@ const Background = styled("div")(({ theme }) => ({
 }));
 
 const ContactForm = () => {
-  const [comments, setComments] = React.useState([]);
-
   const [fullName, setFullName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [text, setText] = React.useState("");
 
+  const [comments, setComments] = React.useState([]);
+
+  React.useEffect(() => {
+    const getLocalComments = localStorage.getItem("comments");
+    const getComments = JSON.parse(getLocalComments);
+    setComments(getComments);
+  }, []);
+
   React.useEffect(() => {
     localStorage.setItem("comments", JSON.stringify(comments));
   }, [comments]);
-
-  const getLocalComments = localStorage.getItem("comments");
-  const getComments = JSON.parse(getLocalComments);
 
   const handleSendMessage = (e) => {
     const randomIndex = Math.floor(Math.random() * 100);
@@ -44,16 +47,15 @@ const ContactForm = () => {
       text: text,
     };
 
-    if (!email.trim() && !fullName.trim() && !text.trim()) {
-      alert("заполните поля name email message");
+    if (!fullName.trim() && !text.trim()) {
+      alert("заполните поля name message");
     } else {
       setComments([...comments, comment]);
       setFullName("");
       setEmail("");
       setText("");
-      e.target.reset();
     }
-
+    e.target.reset();
     e.preventDefault();
   };
 
@@ -72,15 +74,18 @@ const ContactForm = () => {
             </Typography>
             <Background>
               <List>
-                {getComments.length ? (
-                  getComments.map((comment) => (
-                    <ListItem key={comment.id}>
+                {comments?.length ? (
+                  comments.map((comment) => (
+                    <ListItem key={comment.id} className="show-comments">
                       <ListItemAvatar>
                         <Avatar>
                           <FolderIcon />
                         </Avatar>
                       </ListItemAvatar>
-                      <ListItemText primary={comment.fullName} />
+                      <ListItemText
+                        primary={comment.fullName}
+                        secondary={comment.text}
+                      />
                       <IconButton
                         edge="end"
                         aria-label="delete"
